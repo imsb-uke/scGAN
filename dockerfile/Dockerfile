@@ -1,33 +1,15 @@
-FROM tensorflow/tensorflow:latest-gpu
+FROM tensorflow/tensorflow:1.8.0-gpu-py3
 
 # Install some dependencies
 
 ENV LC_ALL C.UTF-8
 
-RUN apt-get update
+RUN apt-get update \
+  && apt-get -y --no-install-recommends install ssh python3-tk python3-pip  libxml2-dev libhdf5-dev llvm \
+  && pip3 install --upgrade 'pip<21' setuptools wheel
 
-RUN apt-get install -y python3-pip
+COPY requirements.txt /requirements.txt
 
-RUN apt-get -y install xml2 
+RUN pip3 install cmake && \
+    pip3 install -r /requirements.txt
 
-RUN apt-get -y install ssh python3-tk
-
-RUN pip3 install -U pip
-
-RUN pip install matplotlib MulticoreTSNE h5py scipy pillow
-
-RUN pip install seaborn scikit-learn statsmodels numba
-
-RUN pip install scanpy==1.2.2
-
-RUN pip install --upgrade numpy
-
-RUN apt-get -y  install libxml2-dev
-
-RUN pip install python-igraph
-
-RUN pip install tables
-
-RUN pip install louvain
-
-MAINTAINER Mohamed Marouf <maroufmail@gmail.com>
