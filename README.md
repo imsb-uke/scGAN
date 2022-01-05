@@ -1,10 +1,10 @@
 # Realistic in silico generation and augmentation of single cell RNA-seq data using Generative Adversarial Neural Networks
-This project contains the Tensorflow implementation and documentation for the training of the (c)scGAN models described in our [manuscript](https://www.biorxiv.org/content/early/2018/08/14/390153) 'Realistic in silico generation and augmentation of single cell RNA-seq data using Generative Adversarial Neural Networks'.
-This document describes how to set up an envinroment and run the code to replicate the results of the original manuscript.
+This project contains the Tensorflow implementation and documentation for the training of the (c)scGAN models described in our [manuscript](https://www.nature.com/articles/s41467-019-14018-z) 'Realistic in silico generation and augmentation of single cell RNA-seq data using Generative Adversarial Neural Networks'.
+This document describes how to set up an environment and run the code to replicate the results of the original manuscript.
 
 ## Main requirements
 The code was tested with the following packages and versions:
- - Python: 3.6
+ - Python: 3.5
  - Tensorflow: 1.8
  - Scanpy: 1.2.2
  - Anndata: 0.6.5
@@ -41,7 +41,7 @@ python main.py --param parameters.json --process
 ### Training
 All the parameters regarding the training should be defined in the `.json` parameter file.
 The type of model (scGAN or cscGAN), the size of the different layers, the normalization layer used to condition the generation (batchnorm or layernorm), lambda, the batch size, dimension of the latent space, along with all the optimizer parameters (number of steps, learning rate, algorithm used...) are defined there.
-Also, the frequencies (how often the values are logged for the Tensorboard, the t-SNE validation plots are plotted, the loss values are displayed on the standard output, the model is saved) are definied there.
+Also, the frequencies (how often the values are logged for the Tensorboard, the t-SNE validation plots are plotted, the loss values are displayed on the standard output, the model is saved) are defined there.
 To run the training, the `--train` flagged is used.
 ```sh
 python main.py --param parameters.json --train
