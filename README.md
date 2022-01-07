@@ -9,6 +9,7 @@ In case we have missed essential dependencies please raise an issue.
 To allow you to reproduce our results easily, we also provide a Dockerfile that contains a working environment containing all the dependencies.
 You can build the docker image using `docker build . -t scgan:latest -f dockerfile/Dockerfile` .
 Please check the [Tensorflow Docker Help Page](https://www.tensorflow.org/install/docker?hl=en) for further information on how to use Tensorflow with docker.
+We provide a ready-to-use Docker image on [DockerHub](https://hub.docker.com/r/fhausmann/scgan).
 
 ## Usage
 The `main.py` script is used to start the pre-processing of the files, to start (or resume) the training, and generate cells using a trained model.
