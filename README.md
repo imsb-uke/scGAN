@@ -3,19 +3,13 @@ This project contains the Tensorflow implementation and documentation for the tr
 This document describes how to set up an environment and run the code to replicate the results of the original manuscript.
 
 ## Main requirements
-The code was tested with the following packages and versions:
- - Python: 3.5
- - Tensorflow: 1.8
- - Scanpy: 1.2.2
- - Anndata: 0.6.5
- - Pandas: 0.22.0
- - Numpy: 1.14.3
- - Scipy: 1.1.0
-
+The code was tested with Python 3.5 and the packages listed in [requirements.txt](requirements.txt).
 We assume that the installation of the above-mentioned packages covers all dependencies.
 In case we have missed essential dependencies please raise an issue.
 To allow you to reproduce our results easily, we also provide a Dockerfile that contains a working environment containing all the dependencies.
-However, be aware that you will need to use the [NVIDIA Container Runtime for Docker](https://github.com/NVIDIA/nvidia-docker) if you plan on using a GPU for the training (highly recommended).
+You can build the docker image using `docker build . -t scgan:latest -f dockerfile/Dockerfile` .
+Please check the [Tensorflow Docker Help Page](https://www.tensorflow.org/install/docker?hl=en) for further information on how to use Tensorflow with docker.
+We provide a ready-to-use Docker image on [DockerHub](https://hub.docker.com/r/fhausmann/scgan).
 
 ## Usage
 The `main.py` script is used to start the pre-processing of the files, to start (or resume) the training, and generate cells using a trained model.
