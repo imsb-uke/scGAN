@@ -106,4 +106,5 @@ if __name__ == '__main__':
         po.join()
 
     if a.generate:
-        run_exp((a.model_path, [0]), mode='generate', cells_no=a.cells_no)
+        run_exp((a.model_path, [0]), mode='generate', cells_no=a.cells_no,
+         save_cells_path=a.save_path)
