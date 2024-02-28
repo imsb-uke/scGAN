@@ -51,11 +51,8 @@ prompt-toolkit==1.0.15
 protobuf==3.5.2.post1
 ptyprocess==0.5.2
 pycparser==2.20
-pycurl==7.43.0
 Pygments==2.2.0
-pygobject==3.20.0
 pyparsing==2.2.0
-python-apt==1.1.0b1+ubuntu0.16.4.1
 python-dateutil==2.7.2
 python-igraph==0.8.2
 pytz==2018.4
