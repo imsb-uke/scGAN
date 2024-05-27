@@ -82,7 +82,7 @@ def make_example(scg_line, barcode, count_no, genes_no,
         int64_list=tf.train.Int64List(value=[count_no]))
 
     # add hot encoding for classification problems
-    if cluster:
+    if cluster is not None:
         feat_map['cluster_1hot'] = tf.train.Feature(
             int64_list=tf.train.Int64List(
                 value=[int(c == cluster) for c in categories]))
